@@ -14,11 +14,13 @@ and open the template in the editor.
         $usuasrio="root";
         $pwd="";
            if($mbd = new PDO('mysql:host=localhost;dbname=test2',$usuario,$contraseña)){
-               
-            
+              
                 $val=$mbd->prepare('select * from persona');
                 $val=$mvd->execute();
+                $result=$val->fetchAll();
+                echo "<pre>";
                 var_dump($result);
+                echo "</pre>";
             }
         ?>
     </body>
